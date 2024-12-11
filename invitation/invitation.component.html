@@ -1,0 +1,57 @@
+<!-- Marquee Header -->
+<div *ngIf="errorMessage; else invitationContent" class="alert alert-danger mt-5">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<ng-template #invitationContent>
+  <div class="invitation mt-5">
+    <!-- Marquee Header -->
+    <div class="marquee-container">
+      <h1 class="marquee">हार्दिक निमन्त्रणा !</h1>
+    </div>
+
+    <!-- Main Image -->
+    <img [src]="imageSrc" alt="A festive invitation image featuring the Jingle Beers & No Fears event" class="main-image img-fluid animate-on-hover">
+
+    <!-- Invitation Content -->
+    <div class="invitation-card">
+      <p class="intro">
+        Hey  <strong class="animated-name">{{  name  }}</strong>,<br>
+        You're in for our
+        <span class="text-bg-danger fs-3"><strong>JINGLE BEERS & NO FEARS!</strong></span>
+        Join our exclusive Boys Only Bash! Kick back, chat, and dive into MAGA talk.
+        <br><strong>Expect:</strong>
+      <ul style="font-size: 30px">
+        <li>Thoughts, laughs, adventures</li>
+        <li>Gaming, grilling, chilling</li>
+        <li>Politics discussion</li>
+      </ul>
+      <strong style="font-size: 25px" >Bring:</strong>
+      <ul style="font-size: 25px">
+        <li>Favorite drink</li>
+        <li>Good stories</li>
+        <li>MAGA spirit</li>
+      </ul>
+      <strong>Dress Code:</strong> Casual - it's boys' night out!
+
+    </div>
+
+    <!-- Event Details -->
+    <div class="details-box">
+      <p class="details">Date: <strong>{{ fixedDate }}</strong></p>
+      <p class="details">Venue: <strong>{{ venue }}</strong></p>
+      <p class="details">Contact: <strong>{{ phoneNumber }}</strong></p>
+    </div>
+
+    <!-- Thumbnail Image -->
+    <img [src]="thumbnailSrc" alt="Thumbnail Image of event highlights" class="thumbnail img-fluid">
+
+    <!-- Closing Message -->
+    <p class="closing">I'm so excited to see you, I might just melt when you walk through the door.</p>
+
+    <!-- Centered Team Message -->
+    <div class="text-center mt-3">
+      <h3 class="text-bg-danger">JINGLE BEERS & NO FEARS TEAM</h3>
+    </div>
+  </div>
+</ng-template>

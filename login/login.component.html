@@ -1,0 +1,20 @@
+<div class="login-container">
+  <h1 class="holiday-heading">MaGa Holiday Party 🎊</h1>
+  <img [src]="loginImage" alt="Login Image for the Holiday Party" />
+  <h2 class="login-title">Login</h2>
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Enter your email" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="password-input">
+        <input [type]="passwordVisible ? 'text' : 'password'" id="password" [(ngModel)]="password" name="password" placeholder="Enter your password" />
+        <i (click)="togglePasswordVisibility()" class="password-toggle fas {{passwordVisible ? 'fa-eye' : 'fa-eye-slash'}}"></i>
+      </div>
+    </div>
+    <button type="submit" class="login-button">Login</button>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </form>
+</div>

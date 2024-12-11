@@ -1,0 +1,30 @@
+<div class="admin">
+  <h2 class="comedy-heading">Jingle Beers & No Fears! Santa's Lost His Pants at Gorkhe's - BYOB & Be Generous!</h2>
+
+  <img src="assets/images/holiday.JPEG" class="img-fluid party-image" alt="Holiday Image with Santa in a funny situation">
+
+  <h2 class="comedy-heading">Add New Invitation - Don't Make Santa Wait!</h2>
+  <form (ngSubmit)="addInvitation()" class="form-control-animated">
+    <label for="name">Name: (Who's Ready for Some Holiday Shenanigans?)</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required placeholder="Enter name or Santa might skip your house!">
+    <button type="submit" class="btn-comedy">Add Invitation - Let's Party!</button>
+  </form>
+
+  <!-- Display success message with humor -->
+  <p *ngIf="successMessage" class="success-message">🎉 {{ successMessage }} You've made Santa's day! 🎉</p>
+
+  <!-- Display the name with invitation link -->
+  <div *ngIf="invitationLink" class="preview-box">
+    <p class="comedy-text">
+      <strong class="animated-name">{{ name }}</strong> has been invited to the merriment!
+      <a [routerLink]="['/invitation', invitationLink.split('/').pop()]" class="preview-link">View Live Invitation</a>
+    </p>
+  </div>
+
+  <h3 class="comedy-heading">Invited People - The More, The Merrier!</h3>
+  <ul class="invited-list">
+    <li *ngFor="let invitation of invitations" class="party-guest">
+      <a [routerLink]="['/invitation', invitation.id]" class="name-link">{{ invitation.name }}</a> - Ready for some Beer Guzzling and Dirty Banter?
+    </li>
+  </ul>
+</div>
