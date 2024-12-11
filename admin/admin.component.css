@@ -266,7 +266,7 @@ input[type="text"]:focus {
   }
 }
 .name-link {
-  color: inherit; /* Inherit color from parent to blend in */
+  color: red; /* Inherit color from parent to blend in */
   text-decoration: none; /* Remove underline for a cleaner look */
 }
 

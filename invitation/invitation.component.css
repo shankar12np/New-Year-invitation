@@ -19,6 +19,7 @@ body {
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 0 auto;
 }
 
 .invitation:hover {
@@ -69,7 +70,7 @@ body {
 }
 
 .intro {
-  font-size: 22px; /* Base size, will be adjusted by media query */
+  font-size: 22px;
   text-align: center;
   line-height: 1.8;
   color: #e0e0e0;
@@ -77,7 +78,7 @@ body {
 
 .animated-name {
   color: blue;
-  font-size: clamp(24px, 6vw, 40px); /* Minimum 24px, scales up to 40px */
+  font-size: clamp(24px, 6vw, 40px);
   font-weight: bold;
   text-shadow: 2px 2px 8px rgba(255, 99, 71, 0.6);
   display: inline-block;
@@ -90,7 +91,7 @@ body {
     opacity: 1;
   }
   10% {
-    transform: scale(1) rotate(360deg); /* Full spin at the start */
+    transform: scale(1) rotate(360deg);
     opacity: 1;
   }
   20% {
@@ -130,11 +131,12 @@ body {
   padding: 15px;
   margin-bottom: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
 .details {
   color: #FFD700;
-  font-size: 25px; /* Base size, will be adjusted by media query */
+  font-size: 25px;
   text-align: center;
   margin: 5px 0;
 }
@@ -163,15 +165,15 @@ body {
   }
 
   .intro, .details {
-    font-size: 18px; /* Adjusting back to a reasonable size for mobile */
+    font-size: 18px;
   }
 
   .marquee {
-    font-size: 16px; /* Keep this consistent */
+    font-size: 16px;
   }
 
   .animated-name {
-    font-size: clamp(24px, 8vw, 40px); /* Ensure mobile doesn't reduce below 24px */
+    font-size: clamp(24px, 8vw, 40px);
   }
 
   .main-image, .thumbnail {
@@ -188,6 +190,8 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 0 auto; /* Center the button if it's within the invitation */
+  display: block; /* For centering */
 }
 
 button:hover {
